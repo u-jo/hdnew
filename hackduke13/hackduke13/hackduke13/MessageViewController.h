@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MessageViewController : UIViewController<UINavigationBarDelegate, UITextViewDelegate>
-@property (strong, nonatomic) IBOutlet UINavigationItem *navigationItem1;
 @property (nonatomic, strong) UIImage *image;
 @end

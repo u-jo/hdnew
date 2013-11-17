@@ -27,30 +27,29 @@
     
     return self;
 }
+
 - (IBAction)done:(id)sender {
+    NSLog(@"yes");
     [self.textView resignFirstResponder];
+    [self.view becomeFirstResponder];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.textView = [[DALinedTextView alloc] init];
     self.textView.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
-    [self.view addSubview:self.textView];
-    
-
-    self.textView.delegate = self;
 }
 
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
     NSLog(@"yes");
-    if ([self.textView.text isEqualToString:@"Create a message!"]) {
+    if ([textView.text isEqualToString:@"Create a message!"]) {
         self.textView.text = @"";
         [self.view setNeedsDisplay];
     }
+    
 }
 - (IBAction)endEditting:(id)sender {
     [self.textView resignFirstResponder];
@@ -60,10 +59,9 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.textView.text =@"";
+    self.textView.text =@"Create a message!";
     self.textView.delegate = self;
 }
-
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
@@ -85,7 +83,7 @@
             MapPostViewController *mpvc = (MapPostViewController *)segue.destinationViewController;
             mpvc.image = self.image;
             mpvc.message = self.textView.text;
-            self.navigationItem1.backBarButtonItem.title = @"";
+            self.navigationItem.backBarButtonItem.title = @"";
         }
     }
 }

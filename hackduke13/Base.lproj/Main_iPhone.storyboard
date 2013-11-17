@@ -97,6 +97,17 @@
                                 <rect key="frame" x="77" y="160" width="167" height="159"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ai-4r-PLR">
+                                <rect key="frame" x="65" y="156" width="191" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="done:" destination="XOz-m2-alq" eventType="touchUpInside" id="6ce-a7-khw"/>
+                                    <action selector="showImagePickerForCamera:" destination="XOz-m2-alq" eventType="touchUpInside" id="vdb-qM-cpW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -122,7 +133,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Create a message!" translatesAutoresizingMaskIntoConstraints="NO" id="fpq-tm-iO0" customClass="DALinedTextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fpq-tm-iO0" customClass="DALinedTextView">
                                 <rect key="frame" x="0.0" y="66" width="320" height="370"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -152,7 +163,7 @@
                     <navigationItem key="navigationItem" title="Create a Message" id="Gqu-rM-AbI">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="5ds-NF-e92">
                             <connections>
-                                <action selector="done:" destination="c6c-DL-ick" id="Pa6-Tp-ctf"/>
+                                <action selector="done:" destination="c6c-DL-ick" id="5PL-vx-NU9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
