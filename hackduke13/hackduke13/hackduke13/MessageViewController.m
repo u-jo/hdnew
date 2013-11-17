@@ -7,7 +7,7 @@
 //
 
 #import "MessageViewController.h"
-#import "MapPostViewController.h"
+#import "NotifyFriendsViewController.h"
 #import "DALinedTextView.h"
 @interface MessageViewController ()
 @property (strong, nonatomic) IBOutlet DALinedTextView *textView;
@@ -78,9 +78,9 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"postToMap"]) {
-        if ([segue.destinationViewController isKindOfClass:[MapPostViewController class]]) {
-            MapPostViewController *mpvc = (MapPostViewController *)segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"notifyFriends"]) {
+        if ([segue.destinationViewController isKindOfClass:[NotifyFriendsViewController class]]) {
+            NotifyFriendsViewController *mpvc = (NotifyFriendsViewController *)segue.destinationViewController;
             mpvc.image = self.image;
             mpvc.message = self.textView.text;
             self.navigationItem.backBarButtonItem.title = @"";

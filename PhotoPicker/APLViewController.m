@@ -196,7 +196,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
 
-    self.paws.image = NULL;
+    
     if ([self.capturedImages count] > 0)
     {
         
@@ -236,6 +236,7 @@
     }
 
     self.imagePickerController = nil;
+    self.paws.image = NULL;
 }
 
 

@@ -4,63 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Post View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
-            <objects>
-                <viewController id="vXZ-lx-hvc" customClass="PostViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Oc1-0C-kKl"/>
-                        <viewControllerLayoutGuide type="bottom" id="ExR-ju-spH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnD-3b-1Sn">
-                                <rect key="frame" x="26" y="430" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showImagePickerForCamera:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pNj-ni-9Gw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6l-uC-R1b">
-                                <rect key="frame" x="145" y="430" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="2">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="createMessage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lDw-we-iPI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWz-fM-mBG">
-                                <rect key="frame" x="270" y="430" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="3">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goToMap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mOB-JS-38b"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IiM-eH-pQK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="422"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="imageView" destination="IiM-eH-pQK" id="EO4-m0-9A4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="599" y="719"/>
-        </scene>
         <!--View Controller - Take a Photo-->
         <scene sceneID="aX7-RL-Off">
             <objects>
@@ -178,7 +121,7 @@
                                     <barButtonItem title="Next" id="qNf-sW-1cV">
                                         <connections>
                                             <action selector="next:" destination="c6c-DL-ick" id="gcQ-nz-kkd"/>
-                                            <segue destination="Kjs-Kf-3A1" kind="push" identifier="postToMap" id="DkN-fz-WGZ"/>
+                                            <segue destination="zyZ-lb-ZAf" kind="push" identifier="notifyFriends" id="vu3-F5-UOJ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -205,6 +148,47 @@
                 <tapGestureRecognizer id="gJ7-v5-EG6"/>
             </objects>
             <point key="canvasLocation" x="283" y="-26"/>
+        </scene>
+        <!--Table View Controller - Notify Friends-->
+        <scene sceneID="adI-PC-1ny">
+            <objects>
+                <tableViewController id="zyZ-lb-ZAf" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zbB-Kz-pEg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="do7-Yg-lFM">
+                            <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem width="122" style="plain" systemItem="fixedSpace" id="ZMA-Yi-0or"/>
+                                <barButtonItem title="Next" id="mOU-4K-7xB">
+                                    <connections>
+                                        <segue destination="Kjs-Kf-3A1" kind="push" id="kyc-XE-4gw"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1OJ-YM-dfD">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1OJ-YM-dfD" id="bKh-Zh-J1C">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zyZ-lb-ZAf" id="kYc-cP-j7t"/>
+                            <outlet property="delegate" destination="zyZ-lb-ZAf" id="fQw-2o-bSe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Notify Friends" id="tzf-an-ntB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dwf-WZ-w3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="-26"/>
         </scene>
         <!--Map Post View Controller - Leave a Footprint-->
         <scene sceneID="shB-Eq-sRZ">
@@ -247,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tjt-v7-yfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="-26"/>
+            <point key="canvasLocation" x="1257" y="-26"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="6Yg-Hb-xpN">
@@ -294,6 +278,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZo-O5-h1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-820" y="-34"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="w1k-Kc-jdL">
+            <objects>
+                <viewController id="XIN-qd-AKT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r3G-rb-g5D"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aw0-Gi-2AQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KMQ-tO-Xrf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WrR-kr-Ddn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="414"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLY-ZL-YEu">
+                                <rect key="frame" x="0.0" y="412" width="320" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L7P-LC-5ir" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="719"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
