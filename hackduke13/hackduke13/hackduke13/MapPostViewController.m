@@ -36,7 +36,7 @@
     
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = 0.5; //user needs to press for 2 seconds
+    lpgr.minimumPressDuration = 0.3; //user needs to press for 2 seconds
     [self.mapView addGestureRecognizer:lpgr];
 
 }
@@ -51,9 +51,13 @@
     CLLocationCoordinate2D touchMapCoordinate =
     [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
     
-    MKAnnotationView *annot = [[MKAnnotationView alloc] init];
-    annot.annotation.coordinate = touchMapCoordinate;
-    [self.mapView addAnnotation:annot.annotation];
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    [annotation setCoordinate:touchMapCoordinate];
+    [self.jSON setObject:[NSString stringWithFormat:@"%f",touchMapCoordinate.latitude] forKey:@"latitude"];
+    [self.jSON setObject:[NSString stringWithFormat:@"%f",touchMapCoordinate.longitude] forKey:@"longitude"];
+    [annotation setTitle:@"New Post"]; //You can set the subtitle too
+    [self.mapView addAnnotation:annotation];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -87,7 +91,7 @@
 - (IBAction)post:(id)sender {
     NSDate *date = [NSDate date];
     [self.jSON setObject:[NSString stringWithFormat:@"%f",[date timeIntervalSince1970]] forKey:@"timestamp"];
-    [self.jSON setObject:@"ujo" forKey:@"username"];
+    [self.jSON setObject:@"Yu Zhou" forKey:@"username"];
     [self.jSON setObject:@"none" forKey:@"restrictions"];
     
     //NSData *imageData = UIImagePNGRepresentation(self.image);

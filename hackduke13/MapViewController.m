@@ -60,6 +60,9 @@
 
 - (IBAction)loadMapView:(id)sender
 {
+    
+    
+    
     NSMutableArray *venuesArray = [[NSMutableArray alloc] init];
     NSMutableDictionary *venue1 = [[NSMutableDictionary alloc] init];
     [venue1 setObject:@"44.4758" forKey:@"latitude"];
