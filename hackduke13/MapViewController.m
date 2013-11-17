@@ -27,7 +27,7 @@
 - (void)viewDidLoad //WHAT HAPPENS AFTER VIEW IS SHOWN
 {
     [super viewDidLoad];
-    //self.mapView.showsUserLocation = YES;
+    self.mapView.showsUserLocation = YES;
 	    
 }
 
@@ -157,7 +157,7 @@
 
 - (void)showVenueDetails:(id)sender
 {
-    NSLog(@"show venue here");
+    NSLog(@"show popup here");
 }
 
 - (void)didReceiveMemoryWarning

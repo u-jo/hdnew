@@ -15,6 +15,7 @@
 @end
 
 @implementation MapPostViewController
+@synthesize mapView;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,13 +32,53 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.jSON = [[NSMutableDictionary alloc]init];
+    self.mapView.showsUserLocation = YES;
+    
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = 0.5; //user needs to press for 2 seconds
+    [self.mapView addGestureRecognizer:lpgr];
+
+}
+
+- (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer
+{
+    NSLog(@"called");
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
+        return;
+    
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
+    CLLocationCoordinate2D touchMapCoordinate =
+    [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+    
+    MKAnnotationView *annot = [[MKAnnotationView alloc] init];
+    annot.annotation.coordinate = touchMapCoordinate;
+    [self.mapView addAnnotation:annot.annotation];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
     [self.jSON setObject:self.message forKey:@"description"];
 }
+
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    CLLocationCoordinate2D newLocation = [userLocation coordinate];
+    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(newLocation, 1500, 1500);
+    [self.mapView setRegion:zoomRegion];
+}
+
+// When a map annotation point is added, zoom to it (1500 range)
+- (void)mapView:(MKMapView *)mv didAddAnnotationViews:(NSArray *)views
+{
+	MKAnnotationView *annotationView = [views objectAtIndex:0];
+	id <MKAnnotation> mp = [annotationView annotation];
+	MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate], 1500, 1500);
+	[mv setRegion:region animated:YES];
+	[mv selectAnnotation:mp animated:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -10,7 +10,11 @@
 #import <MapKit/MapKit.h>
 #import "DBViewController.h"
 
-@interface MapPostViewController : UIViewController<MKMapViewDelegate,MKAnnotation>;
+@interface MapPostViewController : UIViewController <MKMapViewDelegate,MKAnnotation,UIGestureRecognizerDelegate> {
+    MKMapView *mapView;
+}
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *message;
+
+
 @end
