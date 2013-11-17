@@ -31,7 +31,6 @@
 - (IBAction)done:(id)sender {
     NSLog(@"yes");
     [self.textView resignFirstResponder];
-    [self.view becomeFirstResponder];
 }
 
 - (void)viewDidLoad
@@ -51,10 +50,6 @@
     }
     
 }
-- (IBAction)endEditting:(id)sender {
-    [self.textView resignFirstResponder];
-    [self.view becomeFirstResponder];
-}
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -66,7 +61,6 @@
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     [self.textView resignFirstResponder];
-    [self.view becomeFirstResponder];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -84,6 +78,7 @@
             mpvc.image = self.image;
             mpvc.message = self.textView.text;
             self.navigationItem.backBarButtonItem.title = @"";
+            NSLog(@"%@",mpvc.message );
         }
     }
 }

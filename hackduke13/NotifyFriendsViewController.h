@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NotifyFriendsViewController : UIViewController
+@interface NotifyFriendsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *message;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end

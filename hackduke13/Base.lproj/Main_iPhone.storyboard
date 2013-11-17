@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8KQ-6S-dLe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8KQ-6S-dLe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--View Controller - Take a Photo-->
@@ -121,7 +121,7 @@
                                     <barButtonItem title="Next" id="qNf-sW-1cV">
                                         <connections>
                                             <action selector="next:" destination="c6c-DL-ick" id="gcQ-nz-kkd"/>
-                                            <segue destination="zyZ-lb-ZAf" kind="push" identifier="notifyFriends" id="vu3-F5-UOJ"/>
+                                            <segue destination="rPI-du-TaX" kind="push" identifier="notifyFriends" id="PWh-lc-7db"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -149,46 +149,61 @@
             </objects>
             <point key="canvasLocation" x="283" y="-26"/>
         </scene>
-        <!--Table View Controller - Notify Friends-->
-        <scene sceneID="adI-PC-1ny">
+        <!--Notify Friends View Controller - Notify Friends-->
+        <scene sceneID="tlI-Wp-bRe">
             <objects>
-                <tableViewController id="zyZ-lb-ZAf" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zbB-Kz-pEg">
+                <viewController id="rPI-du-TaX" customClass="NotifyFriendsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pkE-Bq-vPQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="hUJ-7c-ihN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3jH-I2-cxA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="do7-Yg-lFM">
-                            <rect key="frame" x="0.0" y="130" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <items>
-                                <barButtonItem width="122" style="plain" systemItem="fixedSpace" id="ZMA-Yi-0or"/>
-                                <barButtonItem title="Next" id="mOU-4K-7xB">
-                                    <connections>
-                                        <segue destination="Kjs-Kf-3A1" kind="push" id="kyc-XE-4gw"/>
-                                    </connections>
-                                </barButtonItem>
-                            </items>
-                        </toolbar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1OJ-YM-dfD">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1OJ-YM-dfD" id="bKh-Zh-J1C">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="zyZ-lb-ZAf" id="kYc-cP-j7t"/>
-                            <outlet property="delegate" destination="zyZ-lb-ZAf" id="fQw-2o-bSe"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Notify Friends" id="tzf-an-ntB"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dwf-WZ-w3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xrt-Cf-sGL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="443"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" editingAccessoryType="checkmark" rowHeight="84" id="T4t-qd-3TP">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T4t-qd-3TP" id="OaY-ud-OAb">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rPI-du-TaX" id="bsr-dk-jq4"/>
+                                    <outlet property="delegate" destination="rPI-du-TaX" id="vnC-5i-Rcl"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ETT-zq-gWV">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem width="130" style="plain" systemItem="fixedSpace" id="HdG-63-Lvd"/>
+                                    <barButtonItem title="Next" id="GzW-Cb-4lR">
+                                        <connections>
+                                            <action selector="next:" destination="c6c-DL-ick" id="9U3-45-yWM"/>
+                                            <segue destination="Kjs-Kf-3A1" kind="push" identifier="postToMap" id="SX9-3f-HZA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Notify Friends" id="sXb-i2-gts"/>
+                    <connections>
+                        <outlet property="tableView" destination="xrt-Cf-sGL" id="wVR-rZ-F0y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lDF-kn-QzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="-26"/>
+            <point key="canvasLocation" x="758" y="-26"/>
         </scene>
         <!--Map Post View Controller - Leave a Footprint-->
         <scene sceneID="shB-Eq-sRZ">
