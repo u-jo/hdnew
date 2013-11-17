@@ -207,9 +207,9 @@
 				41E9D656183844E200971F6E /* MessageViewController.h */,
 				41E9D657183844E200971F6E /* MessageViewController.m */,
 				41E9D6591838497800971F6E /* MapPostViewController.h */,
+				41E9D65A1838497800971F6E /* MapPostViewController.m */,
 				416250891839223700E289C3 /* DetailedViewController.h */,
 				4162508A1839223700E289C3 /* DetailedViewController.m */,
-				41E9D65A1838497800971F6E /* MapPostViewController.m */,
 				41E9D6491838424D00971F6E /* OverlayView.xib */,
 			);
 			name = Push;

@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "DBViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+
 @interface MapPostViewController : UIViewController <MKMapViewDelegate,MKAnnotation,UIGestureRecognizerDelegate> {
     MKMapView *mapView;
 }
