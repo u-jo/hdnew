@@ -9,11 +9,14 @@
 #import <MapKit/MapKit.h>
 #import "AppDelegate.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate> {
+@interface MapViewController : UIViewController <MKMapViewDelegate, UIPopoverControllerDelegate> {
     MKMapView *mapView;
 }
 @property (strong,nonatomic) IBOutlet MKMapView *mapView;
 @property (strong,nonatomic) AppDelegate *appDelegate;
+@property (strong, nonatomic) UIPopoverController *popover;
 - (void)loadMapView;
 - (void)showVenueDetails:(id)sender;
+@property (strong, nonatomic) NSString *currentImage;
+@property (strong, nonatomic) NSString *currentMessage; 
 @end

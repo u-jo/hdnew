@@ -7,7 +7,7 @@
 
 #import "MapViewController.h"
 #import "MapViewAnnotation.h"
-
+#import "DetailedViewController.h"
 //define useful constants
 #define METERS_PER_MILE 1609.344
 
@@ -77,6 +77,7 @@
         [venue setObject:[d objectForKey:@"username"] forKey:@"name"];
         [venue setObject:[d objectForKey:@"timestamp"] forKey:@"address"];
         [venue setObject:[d objectForKey:@"imgURL"] forKey:@"imgURL"];
+        [venue setObject:[d objectForKey:@"description"] forKey:@"description"];
         NSLog(@"hi%@",venue);
         [venuesArray addObject:venue];
     }
@@ -127,20 +128,31 @@
         NSData *imageData = [NSData dataWithContentsOfURL:myURL];
         starsImageView.image = [UIImage imageWithData:imageData];
         [leftButton addSubview:starsImageView];
-        
         //set tag equal to venueID
         annotationView.leftCalloutAccessoryView = leftButton;
         annotationView.rightCalloutAccessoryView = rightButton;
-        annotationView.canShowCallout = NO;
+        annotationView.canShowCallout = YES;
         annotationView.draggable = YES;
         return annotationView;
     }
     return nil;
 }
 
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    MapViewAnnotation *annotation = view.annotation;
+    self.currentMessage = annotation.message;
+    self.currentImage = annotation.imgURL;
+}
 - (void)showVenueDetails:(id)sender
 {
-    NSLog(@"show popup here");
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:NULL];
+    DetailedViewController *controller = [sb instantiateViewControllerWithIdentifier:@"detailedViewController"];
+    controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    controller.myURL = self.currentImage;
+    controller.message = self.currentMessage;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

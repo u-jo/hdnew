@@ -340,7 +340,7 @@
         <!--Detailed View Controller-->
         <scene sceneID="w1k-Kc-jdL">
             <objects>
-                <viewController id="XIN-qd-AKT" customClass="DetailedViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XIN-qd-AKT" customClass="DetailedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r3G-rb-g5D"/>
                         <viewControllerLayoutGuide type="bottom" id="Aw0-Gi-2AQ"/>
@@ -357,15 +357,20 @@
                                 <rect key="frame" x="0.0" y="389" width="320" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uwT-04-38c">
-                                <rect key="frame" x="0.0" y="21" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TyI-0S-8lC">
+                                <rect key="frame" x="0.0" y="23" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="tWa-44-1zu"/>
+                                    <navigationItem title="Footprint" id="FEL-Gl-Xpk">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="G70-Bv-YWs">
+                                            <connections>
+                                                <action selector="done:" destination="XIN-qd-AKT" id="pH7-k0-R8a"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -373,7 +378,6 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="WrR-kr-Ddn" id="Vgb-MY-Jhy"/>
-                        <outlet property="navigationBar" destination="uwT-04-38c" id="VDE-X8-FOf"/>
                         <outlet property="textView" destination="ZLY-ZL-YEu" id="ipN-iN-e7O"/>
                     </connections>
                 </viewController>

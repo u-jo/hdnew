@@ -9,13 +9,19 @@
 #import "DetailedViewController.h"
 
 @interface DetailedViewController ()
-@property (strong, nonatomic) IBOutlet UINavigationBar *navigationBar;
+
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet DALinedTextView *textView;
 
 @end
 
 @implementation DetailedViewController
+- (IBAction)done:(id)sender {
+    [self dismissViewControllerAnimated:YES
+ completion:^{
+     
+ }];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +41,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.imageView.image = self.image;
+    NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.felixxiao.com/uploads/%@",self.myURL]];
+    NSData *imageData = [NSData dataWithContentsOfURL:myURL];
+    UIImage *image = [UIImage imageWithData:imageData];
+    self.imageView.image = image;
+
 }
 
 - (void)didReceiveMemoryWarning

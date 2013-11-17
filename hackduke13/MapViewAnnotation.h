@@ -16,5 +16,5 @@
 - (MKMapItem*)mapItem;
 
 @property (strong,nonatomic) NSString *imgURL;
-
+@property (strong,nonatomic) NSString *message;
 @end

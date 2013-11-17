@@ -11,4 +11,5 @@
 @interface DetailedViewController : UIViewController
 @property (strong, nonatomic) UIImage *image;
 @property (strong,nonatomic) NSString *message;
+@property (strong, nonatomic) NSString *myURL;
 @end
