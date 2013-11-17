@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "DBViewController.h"
+
 @interface MapPostViewController : UIViewController<MKMapViewDelegate,MKAnnotation>;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *message;
