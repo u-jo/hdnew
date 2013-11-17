@@ -27,12 +27,23 @@
         } else {
             self.name = @"Unknown charge";
         }
-        self.address = address;
+        self.address = [self convertTimeStamp:address];
         self.theCoordinate = coordinate;
     }
     return self;
 }
 
+- (NSString *)convertTimeStamp:(NSString *)timeStamp {
+    float value = [timeStamp floatValue];
+    int v = (int)value;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:v];
+    NSDateComponents *weekdayComponents = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit fromDate:date];
+    int weekday = [weekdayComponents weekday];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"MMM dd, yyyy HH:mm"];
+    NSString *dateString = [format stringFromDate:date];
+    return dateString;
+}
 - (NSString *)title {
     return _name;
 }
