@@ -5,48 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8BEB8474-A336-40B8-9060-ED75285BED4E</string>
+	<string>F145B816-EEC8-48CA-BABF-169885323E75</string>
 	<key>IDESourceControlProjectName</key>
 	<string>hackduke13</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2F8170D6-AC01-4F68-A18D-7D70C9C6758C</key>
-		<string>https://github.com/felixxxiao/hackduke13.git</string>
-		<key>31B4D3C2-5DCA-413D-B018-39DA6264A908</key>
-		<string>file:///Users/LeeYuZhou/Desktop/hackduke13/</string>
+		<key>FB34E59B-1916-42EF-8513-28651C88BE56</key>
+		<string>https://github.com/u-jo/hdnew.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>hackduke13.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2F8170D6-AC01-4F68-A18D-7D70C9C6758C</key>
+		<key>FB34E59B-1916-42EF-8513-28651C88BE56</key>
 		<string>../..</string>
-		<key>31B4D3C2-5DCA-413D-B018-39DA6264A908</key>
-		<string>../../hackduke13/hackduke13</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/felixxxiao/hackduke13.git</string>
+	<string>https://github.com/u-jo/hdnew.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2F8170D6-AC01-4F68-A18D-7D70C9C6758C</string>
+	<string>FB34E59B-1916-42EF-8513-28651C88BE56</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2F8170D6-AC01-4F68-A18D-7D70C9C6758C</string>
+			<string>FB34E59B-1916-42EF-8513-28651C88BE56</string>
 			<key>IDESourceControlWCCName</key>
-			<string>hackduke13</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>31B4D3C2-5DCA-413D-B018-39DA6264A908</string>
-			<key>IDESourceControlWCCName</key>
-			<string>hackduke13</string>
+			<string>hdnew</string>
 		</dict>
 	</array>
 </dict>

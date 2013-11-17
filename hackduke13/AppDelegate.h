@@ -26,7 +26,7 @@
 
 //SQLite database methods
 - (void)openDB;
-- (void)pullDB;
+- (void)pullDB;  //
 - (void)closeDB;
 
 @end
