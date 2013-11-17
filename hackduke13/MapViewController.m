@@ -98,6 +98,7 @@
         coordinate.longitude= [[venueData objectForKey:@"longitude"] floatValue];
         //set up other parts of the annotation
         MapViewAnnotation *venueAnnotation = [[MapViewAnnotation alloc] initWithName:[venueData objectForKey:@"name"] address:[venueData objectForKey:@"address"] coordinate:coordinate];
+        venueAnnotation.imgURL = [venueData objectForKey:@"imgURL"];
         [mapView addAnnotation:venueAnnotation];
 	}
 }
@@ -120,13 +121,12 @@
         [rightButton addTarget:self action:@selector(showVenueDetails:) forControlEvents:UIControlEventTouchUpInside];
         [rightButton setTitle:annotation.title forState:UIControlStateNormal];
         
-        UIView *leftButton = [[UIView alloc] initWithFrame:CGRectMake(0,0,40,32)];
-        UIImageView *starsImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,40,16)];
-        starsImageView.image = [UIImage imageNamed:@"stars4wide.png"];
-        UIImageView *moneyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,16,40,16)];
-        moneyImageView.image = [UIImage imageNamed:@"money4_wide.png"];
+        UIView *leftButton = [[UIView alloc] initWithFrame:CGRectMake(0,0,80,80)];
+        UIImageView *starsImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,80,80)];
+        NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.felixxiao.com/uploads/%@",[((MapViewAnnotation*) annotation) imgURL]]];
+        NSData *imageData = [NSData dataWithContentsOfURL:myURL];
+        starsImageView.image = [UIImage imageWithData:imageData];
         [leftButton addSubview:starsImageView];
-        [leftButton addSubview:moneyImageView];
         
         //set tag equal to venueID
         annotationView.leftCalloutAccessoryView = leftButton;

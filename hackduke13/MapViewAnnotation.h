@@ -15,4 +15,6 @@
 - (id)initWithName:(NSString*)name address:(NSString*)address coordinate:(CLLocationCoordinate2D)coordinate;
 - (MKMapItem*)mapItem;
 
+@property (strong,nonatomic) NSString *imgURL;
+
 @end
