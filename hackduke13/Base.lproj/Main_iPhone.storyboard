@@ -179,6 +179,7 @@
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
+                                    <barButtonItem width="125" style="plain" systemItem="fixedSpace" id="7cD-cd-aTJ"/>
                                     <barButtonItem title="Post" id="URN-oo-kkk">
                                         <connections>
                                             <action selector="post:" destination="Kjs-Kf-3A1" id="g7l-uZ-mRQ"/>
