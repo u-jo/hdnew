@@ -18,7 +18,7 @@
 @implementation MapViewController
 
 //synthesize properties
-@synthesize mapView;
+@synthesize mapView,appDelegate;
 
 - (void)viewWillAppear:(BOOL)animated { //WHAT HAPPNES BEFORE VIEW IS SHOWN
     
@@ -28,6 +28,8 @@
 {
     [super viewDidLoad];
     self.mapView.showsUserLocation = YES;
+    [self loadMapView:nil];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -63,7 +65,7 @@
 - (IBAction)loadMapView:(id)sender
 {
     
-    
+    //appDelegate.allContent
     
     NSMutableArray *venuesArray = [[NSMutableArray alloc] init];
     NSMutableDictionary *venue1 = [[NSMutableDictionary alloc] init];

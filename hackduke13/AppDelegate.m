@@ -10,7 +10,7 @@
 
 @implementation AppDelegate
 
-@synthesize MyContent,databasePath,dirPaths,docsDir;
+@synthesize MyContent,databasePath,dirPaths,docsDir,allContent;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -19,6 +19,7 @@
     [self createDefaultCopyOfDatabaseIfNeeded];
     [self openDB];
     [self pullDB];
+    allContent = [NSMutableArray array];
     return YES;
 }
 

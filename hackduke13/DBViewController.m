@@ -61,6 +61,65 @@
     
 }
 
+- (void)populateContent
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    MyContent = [appDelegate MyContent];
+    sqlite3_stmt *statement;
+    NSString *querySQL = [NSString stringWithFormat:@"SELECT * FROM local"];
+    const char *query_stmt = [querySQL UTF8String];
+    
+    if (sqlite3_prepare_v2(MyContent,query_stmt,-1,&statement,NULL) == SQLITE_OK) {
+        
+        if (sqlite3_step(statement) == SQLITE_ROW) {
+            NSString *temp;
+            
+            NSDictionary *myDictionary = [NSDictionary dictionary];
+            
+            //field 1: currently username
+            temp = [[NSString alloc] initWithUTF8String:(const char*) sqlite3_column_text(statement,1)];
+            [myDictionary setValue:temp forKey:@"username"];
+            
+
+            //field 2: currently: 'timestamp'
+            temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,2)];
+            [myDictionary setValue:temp forKey:@"timestamp"];
+            
+            //field 3: currently: 'imgurl'
+            temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,3)];
+            [myDictionary setValue:temp forKey:@"imgURL"];
+            
+            //field 4: currently: 'description'
+            temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,4)];
+            [myDictionary setValue:temp forKey:@"description"];
+            
+            //field 5: currently: 'latitude'
+            temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,5)];
+            [myDictionary setValue:temp forKey:@"latitude"];
+            
+            //field 6: currently: 'longitude'
+            temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,6)];
+            [myDictionary setValue:temp forKey:@"longitude"];
+            
+            //field 7: currently: 'restrictions'
+            temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,7)];
+            [myDictionary setValue:temp forKey:@"restrictions"];
+            
+            [appDelegate.allContent addObject:myDictionary];
+            
+        } else {
+            NSLog(@"%s SQL error '%s' (%1d)",query_stmt,sqlite3_errmsg(MyContent),sqlite3_errcode(MyContent));
+        }
+        
+        sqlite3_finalize(statement);
+        
+    } else {
+        NSLog(@"%s SQL error '%s' (%1d)",query_stmt,sqlite3_errmsg(MyContent),sqlite3_errcode(MyContent));
+    }
+    
+}
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -94,6 +153,7 @@
     //NSLog(@"My accounts are:%@",theReply);
     myLiveDictionary = dictionary;
     [self fillDatabase];
+    [self populateContent];
 }
 
 //EMPTY - WHAT HAPPENS WHEN A RESPONSE IS CACHED

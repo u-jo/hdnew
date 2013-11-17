@@ -24,6 +24,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong,nonatomic) NSMutableArray *allContent;
 //SQLite database methods
 - (void)openDB;
 - (void)pullDB;  //

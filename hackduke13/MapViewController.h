@@ -7,12 +7,13 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "AppDelegate.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate> {
     MKMapView *mapView;
 }
 @property (strong,nonatomic) IBOutlet MKMapView *mapView;
-
+@property (strong,nonatomic) AppDelegate *appDelegate;
 - (IBAction)loadMapView:(id)sender;
 - (void)showVenueDetails:(id)sender;
 @end
