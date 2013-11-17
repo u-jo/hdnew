@@ -121,7 +121,11 @@
             MapPostViewController *mpvc = (MapPostViewController *)segue.destinationViewController;
             mpvc.image = self.image;
             mpvc.message = self.message;
-            self.navigationItem.backBarButtonItem.title = @"";
+            self.navigationItem.backBarButtonItem =
+            [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                             style:UIBarButtonItemStyleBordered
+                                            target:nil
+                                            action:nil] ;
             
         }
     }
