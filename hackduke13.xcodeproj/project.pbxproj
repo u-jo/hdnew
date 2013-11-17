@@ -28,6 +28,7 @@
 		41E9D68B1838CF8B00971F6E /* CenterButtonIconPawHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D6851838CF8B00971F6E /* CenterButtonIconPawHighlighted.png */; };
 		41E9D68C1838CF8B00971F6E /* CenterButtonIconPawHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D6861838CF8B00971F6E /* CenterButtonIconPawHighlighted@2x.png */; };
 		41E9D6951838EE9700971F6E /* NotifyFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E9D6941838EE9700971F6E /* NotifyFriendsViewController.m */; };
+		DC235B2418392F3500070F2E /* dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC235B2318392F3500070F2E /* dot@2x.png */; };
 		DC93FA69183824F400947E1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93FA68183824F400947E1A /* Foundation.framework */; };
 		DC93FA6B183824F400947E1A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93FA6A183824F400947E1A /* CoreGraphics.framework */; };
 		DC93FA6D183824F400947E1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93FA6C183824F400947E1A /* UIKit.framework */; };
@@ -104,6 +105,7 @@
 		41E9D6861838CF8B00971F6E /* CenterButtonIconPawHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CenterButtonIconPawHighlighted@2x.png"; sourceTree = "<group>"; };
 		41E9D6931838EE9700971F6E /* NotifyFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifyFriendsViewController.h; sourceTree = "<group>"; };
 		41E9D6941838EE9700971F6E /* NotifyFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifyFriendsViewController.m; sourceTree = "<group>"; };
+		DC235B2318392F3500070F2E /* dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot@2x.png"; sourceTree = "<group>"; };
 		DC93FA65183824F400947E1A /* hackduke13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackduke13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC93FA68183824F400947E1A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC93FA6A183824F400947E1A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -280,6 +282,7 @@
 		DC93FA6E183824F400947E1A /* hackduke13 */ = {
 			isa = PBXGroup;
 			children = (
+				DC235B2318392F3500070F2E /* dot@2x.png */,
 				DC93FA77183824F400947E1A /* AppDelegate.h */,
 				DC93FA78183824F400947E1A /* AppDelegate.m */,
 				41E9D6771838926600971F6E /* Login/Logout */,
@@ -389,7 +392,7 @@
 				ORGANIZATIONNAME = "Felix Xiao";
 				TargetAttributes = {
 					DC93FA64183824F400947E1A = {
-						DevelopmentTeam = UMR62TSRFW;
+						DevelopmentTeam = 628YG6RJ8U;
 					};
 					DC93FA88183824F400947E1A = {
 						TestTargetID = DC93FA64183824F400947E1A;
@@ -430,6 +433,7 @@
 				DC93FAD4183852D600947E1A /* FBUserSettingsViewResources.bundle in Resources */,
 				DC93FA7C183824F400947E1A /* Main_iPhone.storyboard in Resources */,
 				41E9D67C1838C77900971F6E /* paw_print2.png in Resources */,
+				DC235B2418392F3500070F2E /* dot@2x.png in Resources */,
 				41E9D68A1838CF8B00971F6E /* CenterButtonIconPawDisabled@2x.png in Resources */,
 				DC93FA73183824F400947E1A /* InfoPlist.strings in Resources */,
 				41E9D64F1838424D00971F6E /* Default.png in Resources */,

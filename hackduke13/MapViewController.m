@@ -26,9 +26,11 @@
 
 - (void)viewDidLoad //WHAT HAPPENS AFTER VIEW IS SHOWN
 {
+    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     [super viewDidLoad];
-    self.mapView.showsUserLocation = YES;
-    [self loadMapView:nil];
+    //self.mapView.showsUserLocation = YES;
+    NSLog(@"POSITION 1");
+    [self loadMapView];
     
 }
 
@@ -62,41 +64,23 @@
 	[mv selectAnnotation:mp animated:YES];
 }
 
-- (IBAction)loadMapView:(id)sender
+- (void)loadMapView
 {
     
-    //appDelegate.allContent
-    
     NSMutableArray *venuesArray = [[NSMutableArray alloc] init];
-    NSMutableDictionary *venue1 = [[NSMutableDictionary alloc] init];
-    [venue1 setObject:@"44.4758" forKey:@"latitude"];
-    [venue1 setObject:@"-73.2110" forKey:@"longitude"];
     
-    [venue1 setObject:@"Venue 1" forKey:@"name"];
-    [venue1 setObject:@"Buckingham Palace" forKey:@"address"];
+    for (NSMutableDictionary *d in self.appDelegate.allContent) {
+        NSLog(@"POSITION 2");
+        NSMutableDictionary *venue = [[NSMutableDictionary alloc] init];
+        [venue setObject:[d objectForKey:@"latitude"] forKey:@"latitude"];
+        [venue setObject:[d objectForKey:@"longitude"] forKey:@"longitude"];
+        [venue setObject:[d objectForKey:@"username"] forKey:@"name"];
+        [venue setObject:[d objectForKey:@"timestamp"] forKey:@"address"];
+        [venue setObject:[d objectForKey:@"imgURL"] forKey:@"imgURL"];
+        NSLog(@"hi%@",venue);
+        [venuesArray addObject:venue];
+    }
     
-    NSMutableDictionary *venue2 = [[NSMutableDictionary alloc] init];
-    [venue2 setObject:@"44.4758" forKey:@"latitude"];
-    [venue2 setObject:@"-73.2125" forKey:@"longitude"];
-    [venue2 setObject:@"Venue 2" forKey:@"name"];
-    [venue2 setObject:@"Near Buckingham Palace" forKey:@"address"];
-    
-    NSMutableDictionary *venue3 = [[NSMutableDictionary alloc] init];
-    [venue3 setObject:@"44.4768" forKey:@"latitude"];
-    [venue3 setObject:@"-73.2145" forKey:@"longitude"];
-    [venue3 setObject:@"Venue 2" forKey:@"name"];
-    [venue3 setObject:@"Near Buckingham Palace 2" forKey:@"address"];
-    
-    NSMutableDictionary *venue4 = [[NSMutableDictionary alloc] init];
-    [venue4 setObject:@"44.4738" forKey:@"latitude"];
-    [venue4 setObject:@"-73.2156" forKey:@"longitude"];
-    [venue4 setObject:@"Billy's Burgers" forKey:@"name"];
-    [venue4 setObject:@"113 Maple Street" forKey:@"address"];
-    
-    [venuesArray addObject:venue1];
-    [venuesArray addObject:venue2];
-    [venuesArray addObject:venue3];
-    [venuesArray addObject:venue4];
     [self plotVenues:venuesArray];
 }
 
@@ -113,8 +97,6 @@
         coordinate.latitude = [[venueData objectForKey:@"latitude"] floatValue];
         coordinate.longitude= [[venueData objectForKey:@"longitude"] floatValue];
         //set up other parts of the annotation
-        
-        
         MapViewAnnotation *venueAnnotation = [[MapViewAnnotation alloc] initWithName:[venueData objectForKey:@"name"] address:[venueData objectForKey:@"address"] coordinate:coordinate];
         [mapView addAnnotation:venueAnnotation];
 	}
@@ -133,13 +115,7 @@
         MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                                          reuseIdentifier:AnnotationIdentifier];
         annotationView.canShowCallout = YES;
-        if (arc4random() % 2 == 1)
-            annotationView.image = [UIImage imageNamed:[NSString stringWithFormat:@"pin_1234.png"]];
-        else if (arc4random() % 2 ==1)
-            annotationView.image = [UIImage imageNamed:[NSString stringWithFormat:@"pin_23.png"]];
-        else
-            annotationView.image = [UIImage imageNamed:[NSString stringWithFormat:@"pin_4.png"]];
-        
+        annotationView.image = [UIImage imageNamed:@"dot.png"];
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         [rightButton addTarget:self action:@selector(showVenueDetails:) forControlEvents:UIControlEventTouchUpInside];
         [rightButton setTitle:annotation.title forState:UIControlStateNormal];

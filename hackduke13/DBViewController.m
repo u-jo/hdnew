@@ -71,44 +71,42 @@
     
     if (sqlite3_prepare_v2(MyContent,query_stmt,-1,&statement,NULL) == SQLITE_OK) {
         
-        if (sqlite3_step(statement) == SQLITE_ROW) {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
             NSString *temp;
             
-            NSDictionary *myDictionary = [NSDictionary dictionary];
+            NSMutableDictionary *myDictionary = [NSMutableDictionary dictionary];
             
             //field 1: currently username
             temp = [[NSString alloc] initWithUTF8String:(const char*) sqlite3_column_text(statement,1)];
-            [myDictionary setValue:temp forKey:@"username"];
+            [myDictionary setObject:temp forKey:@"username"];
             
 
             //field 2: currently: 'timestamp'
             temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,2)];
-            [myDictionary setValue:temp forKey:@"timestamp"];
+            [myDictionary setObject:temp forKey:@"timestamp"];
             
             //field 3: currently: 'imgurl'
             temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,3)];
-            [myDictionary setValue:temp forKey:@"imgURL"];
+            [myDictionary setObject:temp forKey:@"imgURL"];
             
             //field 4: currently: 'description'
             temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,4)];
-            [myDictionary setValue:temp forKey:@"description"];
+            [myDictionary setObject:temp forKey:@"description"];
             
             //field 5: currently: 'latitude'
             temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,5)];
-            [myDictionary setValue:temp forKey:@"latitude"];
+            [myDictionary setObject:temp forKey:@"latitude"];
             
             //field 6: currently: 'longitude'
             temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,6)];
-            [myDictionary setValue:temp forKey:@"longitude"];
+            [myDictionary setObject:temp forKey:@"longitude"];
             
             //field 7: currently: 'restrictions'
             temp = [temp initWithUTF8String:(const char*) sqlite3_column_text(statement,7)];
-            [myDictionary setValue:temp forKey:@"restrictions"];
+            [myDictionary setObject:temp forKey:@"restrictions"];
             
             [appDelegate.allContent addObject:myDictionary];
             
-        } else {
-            NSLog(@"%s SQL error '%s' (%1d)",query_stmt,sqlite3_errmsg(MyContent),sqlite3_errcode(MyContent));
         }
         
         sqlite3_finalize(statement);

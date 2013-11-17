@@ -14,6 +14,6 @@
 }
 @property (strong,nonatomic) IBOutlet MKMapView *mapView;
 @property (strong,nonatomic) AppDelegate *appDelegate;
-- (IBAction)loadMapView:(id)sender;
+- (void)loadMapView;
 - (void)showVenueDetails:(id)sender;
 @end
