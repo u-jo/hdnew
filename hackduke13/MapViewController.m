@@ -39,6 +39,9 @@
 	
 
 }
+- (IBAction)return:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {

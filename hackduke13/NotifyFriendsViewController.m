@@ -8,7 +8,7 @@
 
 #import "NotifyFriendsViewController.h"
 #import "MapPostViewController.h"
-
+#import "MapViewController.h"
 @interface NotifyFriendsViewController ()
 @property (nonatomic,strong) NSMutableArray *arrayOfFriends;
 @property (nonatomic)NSInteger *count;
@@ -27,6 +27,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.arrayOfFriends count];
+}
+- (IBAction)flipView:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:NULL];
+    MapViewController *mvc = [sb instantiateViewControllerWithIdentifier:@"mapViewController"];
+    mvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [self presentViewController:mvc animated:YES completion:nil];
 }
 
 @synthesize arrayOfFriends = _arrayOfFriends;

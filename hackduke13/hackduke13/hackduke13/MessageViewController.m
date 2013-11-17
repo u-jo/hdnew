@@ -9,6 +9,7 @@
 #import "MessageViewController.h"
 #import "NotifyFriendsViewController.h"
 #import "DALinedTextView.h"
+#import "MapViewController.h"
 @interface MessageViewController ()
 @property (strong, nonatomic) IBOutlet DALinedTextView *textView;
 
@@ -17,6 +18,13 @@
 @end
 
 @implementation MessageViewController
+- (IBAction)flipView:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:NULL];
+    MapViewController *mvc = [sb instantiateViewControllerWithIdentifier:@"mapViewController"];
+    mvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [self presentViewController:mvc animated:YES completion:nil];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
