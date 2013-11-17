@@ -140,10 +140,10 @@
 				DC93FAB31838294D00947E1A /* Security.framework in Frameworks */,
 				DC93FAB41838294D00947E1A /* Social.framework in Frameworks */,
 				DC93FAB51838294D00947E1A /* SystemConfiguration.framework in Frameworks */,
+				DC93FAD5183852D600947E1A /* FacebookSDK.framework in Frameworks */,
 				DC93FA6B183824F400947E1A /* CoreGraphics.framework in Frameworks */,
 				DC93FA6D183824F400947E1A /* UIKit.framework in Frameworks */,
 				DC93FAA1183828F900947E1A /* libsqlite3.dylib in Frameworks */,
-				DC93FAD5183852D600947E1A /* FacebookSDK.framework in Frameworks */,
 				DC93FA69183824F400947E1A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +558,7 @@
 					"$(inherited)",
 					/Users/Felix/Downloads/hackduke13,
 					/Users/LeeYuZhou/Downloads/hackduke13,
+					/Users/LeeYuZhou/Desktop/hdnew,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hackduke13/hackduke13-Prefix.pch";
@@ -577,6 +578,7 @@
 					"$(inherited)",
 					/Users/Felix/Downloads/hackduke13,
 					/Users/LeeYuZhou/Downloads/hackduke13,
+					/Users/LeeYuZhou/Desktop/hdnew,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hackduke13/hackduke13-Prefix.pch";
