@@ -28,7 +28,6 @@
 {
     [super viewDidLoad];
     self.mapView.showsUserLocation = YES;
-	    
 }
 
 - (void)viewDidAppear:(BOOL)animated
