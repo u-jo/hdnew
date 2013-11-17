@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4162508B1839223700E289C3 /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4162508A1839223700E289C3 /* DetailedViewController.m */; };
 		41E9D64D1838424D00971F6E /* APLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E9D6401838424D00971F6E /* APLViewController.m */; };
 		41E9D64E1838424D00971F6E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D6411838424D00971F6E /* Default-568h@2x.png */; };
 		41E9D64F1838424D00971F6E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D6421838424D00971F6E /* Default.png */; };
@@ -73,6 +74,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		416250891839223700E289C3 /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedViewController.h; sourceTree = "<group>"; };
+		4162508A1839223700E289C3 /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
 		41E9D63F1838424D00971F6E /* APLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APLViewController.h; path = ../PhotoPicker/APLViewController.h; sourceTree = "<group>"; };
 		41E9D6401838424D00971F6E /* APLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APLViewController.m; path = ../PhotoPicker/APLViewController.m; sourceTree = "<group>"; };
 		41E9D6411838424D00971F6E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../PhotoPicker/Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				41E9D656183844E200971F6E /* MessageViewController.h */,
 				41E9D657183844E200971F6E /* MessageViewController.m */,
 				41E9D6591838497800971F6E /* MapPostViewController.h */,
+				416250891839223700E289C3 /* DetailedViewController.h */,
+				4162508A1839223700E289C3 /* DetailedViewController.m */,
 				41E9D65A1838497800971F6E /* MapPostViewController.m */,
 				41E9D6491838424D00971F6E /* OverlayView.xib */,
 			);
@@ -455,6 +460,7 @@
 				41E9D65B1838497800971F6E /* MapPostViewController.m in Sources */,
 				DC93FACD1838528A00947E1A /* DBViewController.m in Sources */,
 				DC93FACF1838528A00947E1A /* MapViewAnnotation.m in Sources */,
+				4162508B1839223700E289C3 /* DetailedViewController.m in Sources */,
 				41E9D6801838C94400971F6E /* DALinedTextView.m in Sources */,
 				DC93FACE1838528A00947E1A /* MapViewController.m in Sources */,
 				41E9D6951838EE9700971F6E /* NotifyFriendsViewController.m in Sources */,

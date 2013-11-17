@@ -11,7 +11,7 @@
 @interface MapPostViewController ()
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSMutableDictionary *jSON;
-
+@property (strong, nonatomic) NSString *userName;
 @end
 
 @implementation MapPostViewController
@@ -38,7 +38,9 @@
                                           initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = 0.3; //user needs to press for 2 seconds
     [self.mapView addGestureRecognizer:lpgr];
-
+    [FBRequestConnection startWithGraphPath:@"/me" parameters:Nil HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        self.userName = result[@"name"];
+    }];
 }
 
 - (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer
@@ -91,7 +93,7 @@
 - (IBAction)post:(id)sender {
     NSDate *date = [NSDate date];
     [self.jSON setObject:[NSString stringWithFormat:@"%f",[date timeIntervalSince1970]] forKey:@"timestamp"];
-    [self.jSON setObject:@"Yu Zhou" forKey:@"username"];
+    [self.jSON setObject:self.userName forKey:@"username"];
     [self.jSON setObject:@"none" forKey:@"restrictions"];
     
     //NSData *imageData = UIImagePNGRepresentation(self.image);
