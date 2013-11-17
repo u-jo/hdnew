@@ -115,7 +115,7 @@
     {
         MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                                          reuseIdentifier:AnnotationIdentifier];
-        annotationView.canShowCallout = YES;
+        annotationView.canShowCallout = NO;
         annotationView.image = [UIImage imageNamed:@"dot.png"];
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         [rightButton addTarget:self action:@selector(showVenueDetails:) forControlEvents:UIControlEventTouchUpInside];
@@ -131,7 +131,7 @@
         //set tag equal to venueID
         annotationView.leftCalloutAccessoryView = leftButton;
         annotationView.rightCalloutAccessoryView = rightButton;
-        annotationView.canShowCallout = YES;
+        annotationView.canShowCallout = NO;
         annotationView.draggable = YES;
         return annotationView;
     }

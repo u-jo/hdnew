@@ -392,7 +392,7 @@
 				ORGANIZATIONNAME = "Felix Xiao";
 				TargetAttributes = {
 					DC93FA64183824F400947E1A = {
-						DevelopmentTeam = UMR62TSRFW;
+						DevelopmentTeam = 628YG6RJ8U;
 					};
 					DC93FA88183824F400947E1A = {
 						TestTargetID = DC93FA64183824F400947E1A;
