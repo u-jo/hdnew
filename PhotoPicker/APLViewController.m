@@ -54,6 +54,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
 
 @property (nonatomic, weak) IBOutlet UIToolbar *toolBar;
+@property (strong, nonatomic) IBOutlet UIImageView *paws;
 
 @property (nonatomic) IBOutlet UIView *overlayView;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *takePictureButton;
@@ -85,7 +86,9 @@
                                                   otherButtonTitles:nil];
         [alertView show];
     }
-    
+    if (self.imageView.image == NULL) {
+        self.paws.image = [UIImage imageNamed:@"paw_print2.png"];
+    }
     [self updateUI];
 }
 
@@ -193,6 +196,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
 
+    self.paws.image = NULL;
     if ([self.capturedImages count] > 0)
     {
         

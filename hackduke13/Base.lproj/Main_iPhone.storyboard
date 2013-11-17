@@ -93,12 +93,17 @@
                             <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WMt-oV-I4P">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="omz-Wr-lIp">
+                                <rect key="frame" x="77" y="160" width="167" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Take a Photo" id="f5p-Hb-taJ"/>
                     <connections>
                         <outlet property="imageView" destination="WMt-oV-I4P" id="oux-yp-wHQ"/>
+                        <outlet property="paws" destination="omz-Wr-lIp" id="A6u-CX-jb4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fme-dR-Yd3" sceneMemberID="firstResponder"/>
@@ -113,12 +118,12 @@
                         <viewControllerLayoutGuide type="top" id="ktp-2E-DcM"/>
                         <viewControllerLayoutGuide type="bottom" id="qsk-R4-YxY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Myb-hO-TEw">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Myb-hO-TEw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YGT-Rw-TaJ">
-                                <rect key="frame" x="20" y="80" width="280" height="125"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Create a message!" translatesAutoresizingMaskIntoConstraints="NO" id="fpq-tm-iO0" customClass="DALinedTextView">
+                                <rect key="frame" x="0.0" y="66" width="320" height="370"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -128,7 +133,7 @@
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem width="250" style="plain" systemItem="fixedSpace" id="Adk-yj-C2e"/>
+                                    <barButtonItem width="130" style="plain" systemItem="fixedSpace" id="Adk-yj-C2e"/>
                                     <barButtonItem title="Next" id="qNf-sW-1cV">
                                         <connections>
                                             <action selector="next:" destination="c6c-DL-ick" id="gcQ-nz-kkd"/>
@@ -137,23 +142,16 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GG-Iv-g4J">
-                                <rect key="frame" x="142" y="220" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="done:" destination="c6c-DL-ick" eventType="touchUpInside" id="uiR-Hq-9dV"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="fpq-tm-iO0" firstAttribute="top" secondItem="ktp-2E-DcM" secondAttribute="bottom" id="F5b-eT-huj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create a Message" id="Gqu-rM-AbI"/>
                     <connections>
-                        <outlet property="textView" destination="YGT-Rw-TaJ" id="g2T-c0-cmw"/>
+                        <outlet property="textView" destination="fpq-tm-iO0" id="sHl-JA-iwe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bEJ-66-3GO" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -18,6 +18,8 @@
 		41E9D665183875EB00971F6E /* EEToolbarCenterButtonOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E9D662183875EB00971F6E /* EEToolbarCenterButtonOverlay.m */; };
 		41E9D666183875EB00971F6E /* UIToolbar+EEToolbarCenterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E9D664183875EB00971F6E /* UIToolbar+EEToolbarCenterButton.m */; };
 		41E9D67A1838929100971F6E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E9D6791838929100971F6E /* LoginViewController.m */; };
+		41E9D67C1838C77900971F6E /* paw_print2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D67B1838C77900971F6E /* paw_print2.png */; };
+		41E9D6801838C94400971F6E /* DALinedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E9D67F1838C94400971F6E /* DALinedTextView.m */; };
 		DC93FA69183824F400947E1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93FA68183824F400947E1A /* Foundation.framework */; };
 		DC93FA6B183824F400947E1A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93FA6A183824F400947E1A /* CoreGraphics.framework */; };
 		DC93FA6D183824F400947E1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93FA6C183824F400947E1A /* UIKit.framework */; };
@@ -81,6 +83,9 @@
 		41E9D664183875EB00971F6E /* UIToolbar+EEToolbarCenterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+EEToolbarCenterButton.m"; sourceTree = "<group>"; };
 		41E9D6781838929100971F6E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		41E9D6791838929100971F6E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		41E9D67B1838C77900971F6E /* paw_print2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paw_print2.png; sourceTree = "<group>"; };
+		41E9D67E1838C94400971F6E /* DALinedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALinedTextView.h; sourceTree = "<group>"; };
+		41E9D67F1838C94400971F6E /* DALinedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALinedTextView.m; sourceTree = "<group>"; };
 		DC93FA65183824F400947E1A /* hackduke13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackduke13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC93FA68183824F400947E1A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC93FA6A183824F400947E1A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -195,9 +200,19 @@
 			name = Login/Logout;
 			sourceTree = "<group>";
 		};
+		41E9D67D1838C94400971F6E /* DALinedTextView */ = {
+			isa = PBXGroup;
+			children = (
+				41E9D67E1838C94400971F6E /* DALinedTextView.h */,
+				41E9D67F1838C94400971F6E /* DALinedTextView.m */,
+			);
+			path = DALinedTextView;
+			sourceTree = "<group>";
+		};
 		DC93FA5C183824F400947E1A = {
 			isa = PBXGroup;
 			children = (
+				41E9D67D1838C94400971F6E /* DALinedTextView */,
 				DC93FA6E183824F400947E1A /* hackduke13 */,
 				DC93FA90183824F400947E1A /* hackduke13Tests */,
 				DC93FA67183824F400947E1A /* Frameworks */,
@@ -268,6 +283,7 @@
 		DC93FA6F183824F400947E1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				41E9D67B1838C77900971F6E /* paw_print2.png */,
 				41E9D6411838424D00971F6E /* Default-568h@2x.png */,
 				41E9D6421838424D00971F6E /* Default.png */,
 				41E9D6431838424D00971F6E /* Default@2x.png */,
@@ -383,6 +399,7 @@
 				DC93FAD11838529C00947E1A /* hackduke13.sqlite in Resources */,
 				DC93FAD4183852D600947E1A /* FBUserSettingsViewResources.bundle in Resources */,
 				DC93FA7C183824F400947E1A /* Main_iPhone.storyboard in Resources */,
+				41E9D67C1838C77900971F6E /* paw_print2.png in Resources */,
 				DC93FA73183824F400947E1A /* InfoPlist.strings in Resources */,
 				41E9D64F1838424D00971F6E /* Default.png in Resources */,
 				41E9D6541838424D00971F6E /* OverlayView.xib in Resources */,
@@ -409,6 +426,7 @@
 				41E9D65B1838497800971F6E /* MapPostViewController.m in Sources */,
 				DC93FACD1838528A00947E1A /* DBViewController.m in Sources */,
 				DC93FACF1838528A00947E1A /* MapViewAnnotation.m in Sources */,
+				41E9D6801838C94400971F6E /* DALinedTextView.m in Sources */,
 				DC93FACE1838528A00947E1A /* MapViewController.m in Sources */,
 				41E9D665183875EB00971F6E /* EEToolbarCenterButtonOverlay.m in Sources */,
 				41E9D658183844E200971F6E /* MessageViewController.m in Sources */,

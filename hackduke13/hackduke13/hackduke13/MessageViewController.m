@@ -8,9 +8,10 @@
 
 #import "MessageViewController.h"
 #import "MapPostViewController.h"
+#import "DALinedTextView.h"
 @interface MessageViewController ()
+@property (strong, nonatomic) IBOutlet DALinedTextView *textView;
 
-@property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (nonatomic, strong) NSString *message;
 
 @end
@@ -34,8 +35,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.textView = [[DALinedTextView alloc] init];
+    self.textView.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
+    [self.view addSubview:self.textView];
     
-    
+
+    self.textView.delegate = self;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([self.textView.text isEqualToString:@"Create a message!"]) {
+        self.textView.text = @"";
+    }
 }
 - (IBAction)endEditting:(id)sender {
     [self.textView resignFirstResponder];
