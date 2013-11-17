@@ -20,6 +20,12 @@
 		41E9D67A1838929100971F6E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E9D6791838929100971F6E /* LoginViewController.m */; };
 		41E9D67C1838C77900971F6E /* paw_print2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D67B1838C77900971F6E /* paw_print2.png */; };
 		41E9D6801838C94400971F6E /* DALinedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E9D67F1838C94400971F6E /* DALinedTextView.m */; };
+		41E9D6871838CF8B00971F6E /* CenterButtonIconPaw.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D6811838CF8B00971F6E /* CenterButtonIconPaw.png */; };
+		41E9D6881838CF8B00971F6E /* CenterButtonIconPaw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D6821838CF8B00971F6E /* CenterButtonIconPaw@2x.png */; };
+		41E9D6891838CF8B00971F6E /* CenterButtonIconPawDisabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D6831838CF8B00971F6E /* CenterButtonIconPawDisabled.png */; };
+		41E9D68A1838CF8B00971F6E /* CenterButtonIconPawDisabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D6841838CF8B00971F6E /* CenterButtonIconPawDisabled@2x.png */; };
+		41E9D68B1838CF8B00971F6E /* CenterButtonIconPawHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D6851838CF8B00971F6E /* CenterButtonIconPawHighlighted.png */; };
+		41E9D68C1838CF8B00971F6E /* CenterButtonIconPawHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E9D6861838CF8B00971F6E /* CenterButtonIconPawHighlighted@2x.png */; };
 		DC93FA69183824F400947E1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93FA68183824F400947E1A /* Foundation.framework */; };
 		DC93FA6B183824F400947E1A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93FA6A183824F400947E1A /* CoreGraphics.framework */; };
 		DC93FA6D183824F400947E1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93FA6C183824F400947E1A /* UIKit.framework */; };
@@ -86,6 +92,12 @@
 		41E9D67B1838C77900971F6E /* paw_print2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paw_print2.png; sourceTree = "<group>"; };
 		41E9D67E1838C94400971F6E /* DALinedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALinedTextView.h; sourceTree = "<group>"; };
 		41E9D67F1838C94400971F6E /* DALinedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALinedTextView.m; sourceTree = "<group>"; };
+		41E9D6811838CF8B00971F6E /* CenterButtonIconPaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CenterButtonIconPaw.png; sourceTree = "<group>"; };
+		41E9D6821838CF8B00971F6E /* CenterButtonIconPaw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CenterButtonIconPaw@2x.png"; sourceTree = "<group>"; };
+		41E9D6831838CF8B00971F6E /* CenterButtonIconPawDisabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CenterButtonIconPawDisabled.png; sourceTree = "<group>"; };
+		41E9D6841838CF8B00971F6E /* CenterButtonIconPawDisabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CenterButtonIconPawDisabled@2x.png"; sourceTree = "<group>"; };
+		41E9D6851838CF8B00971F6E /* CenterButtonIconPawHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CenterButtonIconPawHighlighted.png; sourceTree = "<group>"; };
+		41E9D6861838CF8B00971F6E /* CenterButtonIconPawHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CenterButtonIconPawHighlighted@2x.png"; sourceTree = "<group>"; };
 		DC93FA65183824F400947E1A /* hackduke13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackduke13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC93FA68183824F400947E1A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC93FA6A183824F400947E1A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -283,6 +295,12 @@
 		DC93FA6F183824F400947E1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				41E9D6811838CF8B00971F6E /* CenterButtonIconPaw.png */,
+				41E9D6821838CF8B00971F6E /* CenterButtonIconPaw@2x.png */,
+				41E9D6831838CF8B00971F6E /* CenterButtonIconPawDisabled.png */,
+				41E9D6841838CF8B00971F6E /* CenterButtonIconPawDisabled@2x.png */,
+				41E9D6851838CF8B00971F6E /* CenterButtonIconPawHighlighted.png */,
+				41E9D6861838CF8B00971F6E /* CenterButtonIconPawHighlighted@2x.png */,
 				41E9D67B1838C77900971F6E /* paw_print2.png */,
 				41E9D6411838424D00971F6E /* Default-568h@2x.png */,
 				41E9D6421838424D00971F6E /* Default.png */,
@@ -397,13 +415,19 @@
 				DC93FA7F183824F400947E1A /* Main_iPad.storyboard in Resources */,
 				DC93FA84183824F400947E1A /* Images.xcassets in Resources */,
 				DC93FAD11838529C00947E1A /* hackduke13.sqlite in Resources */,
+				41E9D6881838CF8B00971F6E /* CenterButtonIconPaw@2x.png in Resources */,
+				41E9D68B1838CF8B00971F6E /* CenterButtonIconPawHighlighted.png in Resources */,
 				DC93FAD4183852D600947E1A /* FBUserSettingsViewResources.bundle in Resources */,
 				DC93FA7C183824F400947E1A /* Main_iPhone.storyboard in Resources */,
 				41E9D67C1838C77900971F6E /* paw_print2.png in Resources */,
+				41E9D68A1838CF8B00971F6E /* CenterButtonIconPawDisabled@2x.png in Resources */,
 				DC93FA73183824F400947E1A /* InfoPlist.strings in Resources */,
 				41E9D64F1838424D00971F6E /* Default.png in Resources */,
 				41E9D6541838424D00971F6E /* OverlayView.xib in Resources */,
+				41E9D6871838CF8B00971F6E /* CenterButtonIconPaw.png in Resources */,
 				41E9D64E1838424D00971F6E /* Default-568h@2x.png in Resources */,
+				41E9D6891838CF8B00971F6E /* CenterButtonIconPawDisabled.png in Resources */,
+				41E9D68C1838CF8B00971F6E /* CenterButtonIconPawHighlighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

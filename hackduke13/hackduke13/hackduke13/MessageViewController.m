@@ -43,10 +43,13 @@
     self.textView.delegate = self;
 }
 
+
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
+    NSLog(@"yes");
     if ([self.textView.text isEqualToString:@"Create a message!"]) {
         self.textView.text = @"";
+        [self.view setNeedsDisplay];
     }
 }
 - (IBAction)endEditting:(id)sender {

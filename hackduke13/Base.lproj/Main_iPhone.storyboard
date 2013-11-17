@@ -149,7 +149,13 @@
                             <constraint firstItem="fpq-tm-iO0" firstAttribute="top" secondItem="ktp-2E-DcM" secondAttribute="bottom" id="F5b-eT-huj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Create a Message" id="Gqu-rM-AbI"/>
+                    <navigationItem key="navigationItem" title="Create a Message" id="Gqu-rM-AbI">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="5ds-NF-e92">
+                            <connections>
+                                <action selector="done:" destination="c6c-DL-ick" id="Pa6-Tp-ctf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textView" destination="fpq-tm-iO0" id="sHl-JA-iwe"/>
                     </connections>
